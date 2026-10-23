@@ -1,7 +1,6 @@
 (() => {
   'use strict';
   const intro = document.getElementById('intro');
-  const key = 'legend-thiago-intro-v1';
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let introTimer;
   let hideTimer;
@@ -12,7 +11,6 @@
     intro.classList.add('exit');
     shell.inert = false;
     document.body.style.overflow = '';
-    try { sessionStorage.setItem(key, 'seen'); } catch (_) { /* Browsing remains available without storage. */ }
     hideTimer = setTimeout(() => { intro.hidden = true; intro.classList.remove('exit'); }, 650);
     if (previousFocus) previousFocus.focus({ preventScroll: true });
   }
@@ -29,9 +27,9 @@
     // Four seconds total, including the transition that reveals the card.
     introTimer = setTimeout(finishIntro, 3350);
   }
-  let seen = false;
-  try { seen = sessionStorage.getItem(key) === 'seen'; } catch (_) { /* Show once where session storage is unavailable. */ }
-  if (!seen) startIntro();
+  // Play the approved opening on every visit, including reloads.
+  startIntro();
+  window.addEventListener('pageshow', event => { if (event.persisted) startIntro(); });
   document.getElementById('skip-intro').addEventListener('click', finishIntro);
   document.getElementById('replay-intro').addEventListener('click', () => startIntro(true));
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !intro.hidden) finishIntro(); });
