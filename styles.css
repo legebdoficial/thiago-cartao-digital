@@ -20,3 +20,13 @@ dialog{width:min(460px,calc(100% - 32px));padding:38px 25px 28px;border:1px soli
 .hm-monogram{font-family:Arial,Helvetica,sans-serif;font-size:24px;font-weight:800;letter-spacing:-2px}
 .hm-digital{font-size:12px;letter-spacing:1px;font-weight:400}
 .hm-credit:hover{color:#26281f}
+
+/* Rounded skip control with a countdown drawn around the small circle. */
+#skip-intro{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid rgba(209,173,105,.45);border-radius:999px;padding:11px 15px;background:rgba(209,173,105,.04);color:#e0d0aa;line-height:1.2;flex-shrink:0}
+#skip-intro .skip-label{margin:0}
+#skip-intro:hover{border-color:#d1ad69;background:rgba(209,173,105,.1)}
+#skip-intro:focus-visible{outline:none;text-decoration:none;border-color:#ead8ab;box-shadow:0 0 0 3px rgba(209,173,105,.16)}
+#skip-intro .skip-progress{width:18px;height:18px;stroke-width:1.5;transform:rotate(-90deg)}
+.skip-track{stroke:rgba(209,173,105,.2)}
+.skip-ring{stroke:#d1ad69;stroke-dasharray:100;stroke-dashoffset:100;animation:skip-countdown 3.35s linear forwards}
+@keyframes skip-countdown{to{stroke-dashoffset:0}}
