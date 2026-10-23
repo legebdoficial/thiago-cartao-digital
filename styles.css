@@ -11,3 +11,12 @@ dialog{width:min(460px,calc(100% - 32px));padding:38px 25px 28px;border:1px soli
 @media(min-width:900px){.page-shell{padding:0 32px}.topbar{height:110px}.profile{margin-top:80px}.profile-content{padding:0 38px 35px}.section-space{margin-top:52px}}
 @media(max-width:360px){.page-shell{padding:0 16px}.topbar>span{font-size:8px;letter-spacing:1px}.profile-content{padding-left:22px;padding-right:22px}.avatar-photo{width:132px;height:132px;margin-top:-68px}.profile-share{right:14px;top:16px;width:34px;height:34px}.role{font-size:12px}.profile-about{font-size:13px}.hub-link{font-size:12px;padding:16px;gap:8px}.intro-bottom>span{max-width:150px;line-height:1.8}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.intro{display:none!important}}
+
+/* Discreet text controls and HM Digital signature. */
+#skip-intro{border:0;border-radius:0;box-shadow:none;background:none;white-space:nowrap}
+#skip-intro:focus-visible{outline:none;text-decoration:underline;text-underline-offset:5px}
+#replay-intro{white-space:nowrap}
+.hm-credit{display:inline-flex;align-items:center;justify-content:center;gap:7px;color:#806330;margin-top:18px;padding:8px 12px;line-height:1}
+.hm-monogram{font-family:Arial,Helvetica,sans-serif;font-size:24px;font-weight:800;letter-spacing:-2px}
+.hm-digital{font-size:12px;letter-spacing:1px;font-weight:400}
+.hm-credit:hover{color:#26281f}
