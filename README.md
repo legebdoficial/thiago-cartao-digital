@@ -16,7 +16,7 @@ Site estático em HTML, CSS e JavaScript, sem dependências de produção e sem 
 
 Telefone confirmado no repositório `legend-links`: +55 (62) 98344-5081. Os ativos originais foram copiados de `legend-links/public/brand`.
 
-A foto pessoal de Thiago ainda não foi fornecida: o avatar usa temporariamente o símbolo original da Legend. Nome completo, cargo específico, biografia pessoal e localização podem ser complementados quando confirmados. Não há endereço, Pix ou dados pessoais inventados.
+A foto pessoal de Thiago está em `assets/thiago.jpg`, copiada do arquivo enviado ao repositório e exibida no avatar sem filtros. A assinatura “Desenvolvido por HM Digital” aparece no rodapé, com link para o Instagram da agência. Nome completo, cargo específico, biografia pessoal e localização podem ser complementados quando confirmados. Não há endereço, Pix ou dados pessoais inventados.
 
 Para trocar o avatar, adicione uma foto em `assets/` e atualize a imagem de `.avatar` no HTML e seu `object-fit` no CSS. Edite os textos e links em `index.html`, o contato em `thiago-legend.vcf` e o endereço de compartilhamento em `app.js`.
 
