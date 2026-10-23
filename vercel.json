@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+      { "key": "X-Frame-Options", "value": "DENY" },
+      { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+      { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; form-action 'self'" }
+    ]},
+    { "source": "/thiago-legend.vcf", "headers": [
+      { "key": "Content-Type", "value": "text/vcard; charset=utf-8" },
+      { "key": "Content-Disposition", "value": "attachment; filename=thiago-legend.vcf" }
+    ]}
+  ]
+}
