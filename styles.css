@@ -30,3 +30,5 @@ dialog{width:min(460px,calc(100% - 32px));padding:38px 25px 28px;border:1px soli
 .skip-track{stroke:rgba(209,173,105,.2)}
 .skip-ring{stroke:#d1ad69;stroke-dasharray:100;stroke-dashoffset:100;animation:skip-countdown 3.35s linear forwards}
 @keyframes skip-countdown{to{stroke-dashoffset:0}}
+
+.hm-credit{gap:3px}.hm-credit .hm-logo{display:block;width:82px;height:46px;object-fit:contain;filter:none;opacity:1}.hm-credit .hm-digital{color:#383e4b;font-size:12px;letter-spacing:.8px}
