@@ -1,10 +1,12 @@
 BEGIN:VCARD
 VERSION:3.0
-N:;Thiago;;;
-FN:Thiago - Legend
+N:Henrique;Thiago;;;
+FN:Thiago Henrique
 ORG:Legend
-TITLE:Legend
+TITLE:CEO
 TEL;TYPE=CELL,VOICE:+5562983445081
 URL:https://thiago.uselegend.com
-NOTE:Legend - Sua identidade em cada detalhe. Loja: https://uselegend.com
+URL;TYPE=Loja:https://uselegend.com
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/thiagohpeixoto/
+NOTE:CEO da Legend. Sua identidade em cada detalhe. Loja: https://uselegend.com · Catálogo: https://catalogo.uselegend.com
 END:VCARD

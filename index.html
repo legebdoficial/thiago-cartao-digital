@@ -3,91 +3,188 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f5f4ef">
-  <title>Thiago | Legend</title>
-  <meta name="description" content="Conecte-se com Thiago, da Legend. Produtos personalizados, identidade em cada detalhe e atendimento direto.">
-  <meta property="og:title" content="Thiago | Legend">
-  <meta property="og:description" content="Sua identidade em cada detalhe. Conheça a Legend e fale diretamente com Thiago.">
-  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b0b0a">
+  <title>Thiago Henrique | CEO da Legend</title>
+  <meta name="description" content="Thiago Henrique, CEO da Legend. Bolsas personalizadas com fábrica própria, a edição Ronaldinho e atendimento direto pelo WhatsApp.">
+  <meta property="og:title" content="Thiago Henrique | CEO da Legend">
+  <meta property="og:description" content="Sua identidade em cada detalhe. Conheça a Legend e fale diretamente com o Thiago.">
+  <meta property="og:type" content="profile">
   <meta property="og:url" content="https://thiago.uselegend.com">
   <meta property="og:image" content="https://thiago.uselegend.com/assets/THIAGO.jpg">
   <meta property="og:image:secure_url" content="https://thiago.uselegend.com/assets/THIAGO.jpg">
-  <meta property="og:image:alt" content="Thiago, da Legend">
+  <meta property="og:image:alt" content="Thiago Henrique, CEO da Legend">
   <meta property="og:image:type" content="image/jpeg">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://thiago.uselegend.com/assets/THIAGO.jpg">
   <link rel="canonical" href="https://thiago.uselegend.com">
   <link rel="icon" type="image/png" href="assets/symbol-legend-white.png">
-  <link rel="preload" as="image" href="assets/logo-legend-white.png">
-  <link rel="preload" as="image" href="assets/THIAGO.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="assets/fotos/thiago-perfil.webp">
+  <link rel="preload" as="image" href="assets/symbol-legend-white.png">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" class="icon-library" aria-hidden="true">
     <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="arrow-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
     <symbol id="phone" viewBox="0 0 24 24"><path d="m5 3 4 1 1 5-2 2a15 15 0 0 0 5 5l2-2 5 1 1 4c-1 6-9 2-13-2S0 4 5 3Z"/></symbol>
     <symbol id="chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13 8L3 21l1.5-5a9 9 0 1 1 16.5-4.5Z"/><path d="m8 7 1 3-1 1a9 9 0 0 0 5 4l1-1 3 1"/></symbol>
     <symbol id="share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></symbol>
     <symbol id="save" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
     <symbol id="instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
-    <symbol id="bag" viewBox="0 0 24 24"><path d="M5 7h14l2 14H3L5 7ZM8 8V6a4 4 0 0 1 8 0v2"/></symbol>
-    <symbol id="book" viewBox="0 0 24 24"><path d="M12 5v16M3 3c4-1 6 0 9 2 3-2 5-3 9-2v16c-4-1-6 0-9 2-3-2-5-3-9-2V3Z"/></symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></symbol>
     <symbol id="spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
     <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
   </svg>
 
-  <div class="intro" id="intro" hidden aria-label="Apresentação Legend">
-    <div class="intro-glow"></div><div class="intro-line"></div>
-    <div class="intro-brand"><img src="assets/symbol-legend-white.png" class="intro-symbol" alt=""><img src="assets/logo-legend-white.png" class="intro-logo" alt="Legend"><p>FEITO PARA LENDAS.</p></div>
-    <div class="intro-bottom"><span>SUA IDENTIDADE EM CADA DETALHE</span><button id="skip-intro" type="button"><span class="skip-label">Pular abertura</span><svg class="skip-progress" viewBox="0 0 20 20" aria-hidden="true"><circle class="skip-track" cx="10" cy="10" r="8" pathLength="100"/><circle class="skip-ring" cx="10" cy="10" r="8" pathLength="100"/></svg></button></div>
+  <!-- Abertura: luz dourada, símbolo, retrato revelado e o nome; termina no próprio retrato da capa. -->
+  <div class="intro" id="intro" hidden aria-label="Apresentação de Thiago Henrique">
+    <div class="intro-grain"></div>
+    <div class="intro-line"></div>
+    <img class="intro-symbol" src="assets/symbol-legend-white.png" alt="">
+    <div class="intro-frame"><img src="assets/fotos/thiago-perfil.webp" alt=""></div>
+    <div class="intro-name" aria-hidden="true">
+      <span class="intro-first"><b>T</b><b>H</b><b>I</b><b>A</b><b>G</b><b>O</b></span>
+      <span class="intro-last">Henrique</span>
+      <span class="intro-role">CEO · LEGEND</span>
+    </div>
+    <button id="skip-intro" class="intro-skip" type="button"><span>Pular</span><svg class="skip-progress" viewBox="0 0 20 20" aria-hidden="true"><circle class="skip-track" cx="10" cy="10" r="8" pathLength="100"/><circle class="skip-ring" cx="10" cy="10" r="8" pathLength="100"/></svg></button>
   </div>
 
-  <div class="page-shell">
-    <header class="topbar"><a href="#inicio" aria-label="Ir para o início"><img src="assets/logo-legend-white.png" alt="Legend" width="110"></a><span>CARTÃO PESSOAL</span><button class="icon-button" data-share aria-label="Compartilhar cartão"><svg><use href="#share"/></svg></button></header>
+  <div class="page">
+    <header class="topbar">
+      <a href="#inicio" aria-label="Ir para o início"><img src="assets/logo-legend-white.png" alt="Legend" width="96"></a>
+      <button class="icon-button" data-share aria-label="Compartilhar cartão"><svg><use href="#share"/></svg></button>
+    </header>
+
     <main id="inicio">
-      <section class="profile" aria-labelledby="profile-title">
-        <button class="icon-button profile-share" data-share aria-label="Compartilhar cartão do Thiago"><svg><use href="#share"/></svg></button>
-        <div class="profile-content">
-          <div class="avatar avatar-photo"><img src="assets/THIAGO.jpg" alt="Thiago, da Legend" width="144" height="144" fetchpriority="high"></div>
-          <h1 id="profile-title">Thiago Henrique<span class="gold-dot">.</span></h1>
-          <p class="role">CEO da Legend</p>
-          <div class="profile-about" aria-label="Sobre o Thiago">
-            <p>Me chamo Thiago Henrique e sou CEO da Legend, uma marca que nasceu em 2022, de uma conversa entre amigos, e cresceu com a ideia de transformar histórias em identidade.</p>
-            <p>Para mim, a Legend representa um movimento, um estilo de vida. Uma bolsa personalizada vai além de carregar um nome ou um escudo: ela valoriza a sua marca, expressa a sua personalidade e se torna uma extensão de quem você é.</p>
-            <p>Hoje, contamos com fábrica própria e mais de 5 mil pessoas utilizam nossas bolsas personalizadas pelo mundo. Seguimos em expansão, criando peças que unem identidade, exclusividade e significado — para você, sua equipe ou sua empresa.</p>
-            <p><strong>Legend. Sua identidade em cada detalhe.</strong></p>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-photo"><img src="assets/fotos/thiago-perfil.webp" alt="Thiago Henrique, CEO da Legend" width="1000" height="1502" fetchpriority="high"></div>
+        <div class="hero-copy">
+          <span class="eyebrow">CEO · LEGEND</span>
+          <h1 id="hero-title"><span class="hero-first">Thiago</span><span class="hero-last">Henrique</span></h1>
+          <p class="hero-tagline">Transformando histórias em identidade.</p>
+          <a class="button button-gold" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Vim%20pelo%20seu%20cart%C3%A3o%20digital%20e%20quero%20conhecer%20a%20Legend." target="_blank" rel="noopener noreferrer"><svg><use href="#chat"/></svg>Falar com o Thiago<svg class="trailing"><use href="#arrow"/></svg></a>
+          <div class="quick">
+            <a href="tel:+5562983445081"><svg><use href="#phone"/></svg><span>Ligar</span></a>
+            <a href="thiago-legend.vcf" download><svg><use href="#save"/></svg><span>Salvar</span></a>
+            <a href="https://www.instagram.com/thiagohpeixoto/" target="_blank" rel="noopener noreferrer" aria-label="Instagram pessoal @thiagohpeixoto"><svg><use href="#instagram"/></svg><span>Instagram</span></a>
+            <button type="button" data-share><svg><use href="#share"/></svg><span>Enviar</span></button>
           </div>
-          <a class="button button-outline save-contact" href="thiago-legend.vcf" download><svg><use href="#save"/></svg>Salvar na agenda</a>
         </div>
       </section>
 
-      <nav class="contact-hub" aria-label="Contatos e links do Thiago e da Legend">
-        <div class="quick-actions">
-          <a href="tel:+5562983445081" aria-label="Ligar para Thiago"><svg><use href="#phone"/></svg><span>Ligar</span></a>
-          <a href="https://www.instagram.com/thiagohpeixoto/" target="_blank" rel="noopener noreferrer" aria-label="Instagram pessoal do Thiago: @thiagohpeixoto"><svg><use href="#instagram"/></svg><span>Instagram pessoal</span></a>
-          <button data-share aria-label="Compartilhar cartão"><svg><use href="#share"/></svg><span>Compartilhar</span></button>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>FEITO PARA LENDAS</span><i>✦</i><span>SUA IDENTIDADE EM CADA DETALHE</span><i>✦</i><span>FÁBRICA PRÓPRIA</span><i>✦</i><span>100% BORDADO</span><i>✦</i><span>FEITO PARA LENDAS</span><i>✦</i><span>SUA IDENTIDADE EM CADA DETALHE</span><i>✦</i><span>FÁBRICA PRÓPRIA</span><i>✦</i><span>100% BORDADO</span><i>✦</i></div></div>
+
+      <section class="stats" aria-label="A Legend em números">
+        <div data-reveal><strong data-count="2022" data-plain>2022</strong><span>ano em que a Legend nasceu</span></div>
+        <div data-reveal><strong>+<em data-count="5">5</em> mil</strong><span>pessoas usam Legend pelo mundo</span></div>
+        <div data-reveal><strong>Própria</strong><span>fábrica, do corte ao bordado</span></div>
+        <div data-reveal><strong><em data-count="100">100</em>%</strong><span>personalização bordada</span></div>
+      </section>
+
+      <section class="about section" aria-labelledby="about-title">
+        <h2 id="about-title" class="script-title" data-reveal>Sobre <em>mim</em></h2>
+        <figure class="arch" data-reveal><img src="assets/fotos/thiago-retrato.webp" alt="Thiago Henrique sorrindo" width="1000" height="1502" loading="lazy"></figure>
+        <div class="about-text" data-reveal>
+          <p>Me chamo Thiago Henrique e sou CEO da Legend, uma marca que nasceu em 2022, de uma conversa entre amigos, e cresceu com a ideia de transformar histórias em identidade.</p>
+          <p>Para mim, a Legend representa um movimento, um estilo de vida. Uma bolsa personalizada vai além de carregar um nome ou um escudo: ela valoriza a sua marca, expressa a sua personalidade e se torna uma extensão de quem você é.</p>
+          <p>Hoje contamos com fábrica própria, e mais de 5 mil pessoas usam nossas bolsas personalizadas pelo mundo. Seguimos em expansão, criando peças que unem identidade, exclusividade e significado, para você, sua equipe ou sua empresa.</p>
+          <p class="signature">Thiago Henrique</p>
         </div>
-        <div class="main-links">
-          <a class="hub-link hub-link-gold" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Vim%20pelo%20seu%20cart%C3%A3o%20digital%20e%20quero%20conhecer%20a%20Legend." target="_blank" rel="noopener noreferrer"><svg><use href="#chat"/></svg><span>Me chame no WhatsApp</span><svg class="hub-arrow"><use href="#arrow"/></svg></a>
-          <a class="hub-link" href="https://www.instagram.com/uselegendoficial/" target="_blank" rel="noopener noreferrer"><svg><use href="#instagram"/></svg><span>Siga a Legend no Instagram</span><svg class="hub-arrow"><use href="#arrow"/></svg></a>
-          <a class="hub-link" href="https://uselegend.com" target="_blank" rel="noopener noreferrer"><svg><use href="#bag"/></svg><span>Conheça o site da Legend</span><svg class="hub-arrow"><use href="#arrow"/></svg></a>
-          <a class="hub-link" href="https://catalogo.uselegend.com" target="_blank" rel="noopener noreferrer"><svg><use href="#book"/></svg><span>Explore nosso catálogo</span><svg class="hub-arrow"><use href="#arrow"/></svg></a>
-          <a class="hub-link" href="#personalizacao"><svg><use href="#spark"/></svg><span>Personalize com a sua identidade</span><svg class="hub-arrow"><use href="#arrow"/></svg></a>
+      </section>
+
+      <section class="ronaldinho" aria-labelledby="r10-title">
+        <div class="r10-lockup" data-reveal><img src="assets/logo-legend-white.png" alt="Legend" width="92"><span>×</span><img src="assets/ronaldinho/galaticos.png" alt="Galáticos Game" width="92"></div>
+        <span class="eyebrow" data-reveal>EDIÇÃO LIMITADA · 100 UNIDADES</span>
+        <h2 id="r10-title" data-reveal>A primeira das 100<br><em>foi para o Ronaldinho.</em></h2>
+        <button class="r10-video" type="button" id="open-video" data-reveal aria-label="Assistir ao vídeo do Thiago com o Ronaldinho">
+          <video src="assets/ronaldinho/loop.mp4" poster="assets/ronaldinho/poster.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <span class="r10-play"><svg><use href="#play"/></svg>Assistir ao momento</span>
+        </button>
+        <p data-reveal>Da união entre Legend e Galáticos Game nasceu o Kit Ronaldinho Edition: mala, mochila, necessaire e porta-chuteiras. O Thiago entregou pessoalmente o kit nº 01 ao Ronaldinho Gaúcho. As outras 99 unidades são numeradas, uma a uma.</p>
+        <figure class="r10-label" data-reveal><img src="assets/ronaldinho/etiqueta.webp" alt="Etiqueta numerada da edição Ronaldinho" loading="lazy"><figcaption>Cada kit leva a sua etiqueta numerada.</figcaption></figure>
+        <a class="button button-outline-gold" href="https://uselegend.com/produtos/kit-ronaldinho-edition" target="_blank" rel="noopener noreferrer" data-reveal>Garantir o meu kit<svg class="trailing"><use href="#arrow"/></svg></a>
+      </section>
+
+      <section class="legend section" aria-labelledby="legend-title">
+        <span class="eyebrow" data-reveal>CONHEÇA A LEGEND</span>
+        <h2 id="legend-title" data-reveal>Feito para acompanhar<br><em>a sua história.</em></h2>
+        <figure class="glow-figure" data-reveal><img src="assets/fotos/hero.webp" alt="Mochila, mala, porta-chuteiras e necessaire Legend em preto e dourado" width="900" height="1600" loading="lazy"></figure>
+        <p data-reveal>Design, funcionalidade e personalização bordada em produtos que levam a sua marca para onde você for.</p>
+      </section>
+
+      <section class="gallery" aria-label="Fotos do Thiago">
+        <div class="gallery-track">
+          <img src="assets/fotos/thiago-riso.webp" alt="Thiago Henrique rindo" loading="lazy" width="1000" height="1502">
+          <img src="assets/fotos/thiago-em-pe.webp" alt="Thiago Henrique em pé, de terno" loading="lazy" width="1000" height="1502">
+          <img src="assets/fotos/thiago-olhar.webp" alt="Thiago Henrique sentado, olhando para o lado" loading="lazy" width="1000" height="1502">
+          <img src="assets/fotos/thiago-terracota.webp" alt="Thiago Henrique ajustando o paletó" loading="lazy" width="1000" height="1502">
+          <img src="assets/fotos/thiago-estudio.webp" alt="Thiago Henrique em estúdio, de terno azul" loading="lazy" width="1000" height="1502">
         </div>
+      </section>
+
+      <nav class="links section" aria-labelledby="links-title">
+        <h2 id="links-title" class="script-title" data-reveal>Por onde você <em>quer começar?</em></h2>
+        <a class="link-card" href="https://uselegend.com" target="_blank" rel="noopener noreferrer" data-reveal>
+          <img src="assets/fotos/about.webp" alt="" loading="lazy"><span><small>01</small><strong>Loja oficial</strong><em>Compre online, em até 12x</em></span><svg><use href="#arrow-up"/></svg>
+        </a>
+        <a class="link-card" href="https://catalogo.uselegend.com" target="_blank" rel="noopener noreferrer" data-reveal>
+          <img src="assets/fotos/hero.webp" alt="" loading="lazy"><span><small>02</small><strong>Catálogo</strong><em>Todos os kits e modelos</em></span><svg><use href="#arrow-up"/></svg>
+        </a>
+        <a class="link-card" href="https://www.instagram.com/uselegendoficial/" target="_blank" rel="noopener noreferrer" data-reveal>
+          <img src="assets/fotos/custom.webp" alt="" loading="lazy"><span><small>03</small><strong>@uselegendoficial</strong><em>A Legend no Instagram</em></span><svg><use href="#arrow-up"/></svg>
+        </a>
+        <a class="link-card" href="https://www.instagram.com/thiagohpeixoto/" target="_blank" rel="noopener noreferrer" data-reveal>
+          <img src="assets/fotos/thiago-em-pe.webp" alt="" loading="lazy"><span><small>04</small><strong>@thiagohpeixoto</strong><em>O Thiago no Instagram</em></span><svg><use href="#arrow-up"/></svg>
+        </a>
       </nav>
 
-      <section class="legend-section section-space" aria-labelledby="legend-title"><div class="section-label"><span>CONHEÇA A LEGEND</span><span class="tiny-symbol">✦</span></div><h2 id="legend-title">Feito para acompanhar<br><span>a sua história.</span></h2><figure class="product-visual"><img src="assets/hero.jpg" alt="Mochila, mala, porta-chuteira e necessaire Legend em preto e dourado" width="900" height="1600" loading="lazy"><figcaption><span>SPORTSWEAR & LIFESTYLE</span><strong>Sua identidade.<br>Em cada detalhe.</strong></figcaption></figure><p>Design, funcionalidade e personalização bordada em produtos que levam a sua marca para onde você for.</p>
+      <section id="personalizacao" class="custom section" aria-labelledby="custom-title">
+        <div class="custom-card" data-reveal>
+          <img src="assets/fotos/custom.webp" alt="Kit Legend com um nome bordado na mochila" loading="lazy" width="900" height="1600">
+          <div><svg><use href="#spark"/></svg><h2 id="custom-title">Tem que ser<br><em>a sua cara.</em></h2><p>Seu nome. Seu escudo. Sua marca.<br>Personalização 100% bordada.</p></div>
+        </div>
+        <a class="button button-outline-gold" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Quero%20um%20or%C3%A7amento%20de%20produtos%20personalizados%20da%20Legend." target="_blank" rel="noopener noreferrer" data-reveal>Pedir um orçamento<svg class="trailing"><use href="#arrow"/></svg></a>
       </section>
 
-      <section id="personalizacao" class="custom-section section-space" aria-labelledby="custom-title"><div class="section-label"><span>SUA MARCA, SEU LEGADO</span><span class="tiny-symbol">✦</span></div><div class="custom-card"><img src="assets/custom.jpg" alt="Kit Legend com exemplo de nome bordado na mochila" width="900" height="1600" loading="lazy"><div class="custom-copy"><svg><use href="#spark"/></svg><h2 id="custom-title">Tem que ser<br><em>a sua cara.</em></h2><p>Seu nome. Seu escudo. Sua marca.<br>Personalização 100% bordada.</p></div></div><a class="button button-outline custom-cta" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Quero%20um%20or%C3%A7amento%20de%20produtos%20personalizados%20da%20Legend." target="_blank" rel="noopener noreferrer">Criar minha identidade <svg class="trailing"><use href="#arrow"/></svg></a></section>
-
-      <section class="closing section-space"><span class="eyebrow">O PRÓXIMO PASSO COMEÇA COM UMA CONVERSA.</span><h2>Vamos deixar<br><span>a sua marca?</span></h2><a class="button button-gold" href="https://wa.me/5562983445081" target="_blank" rel="noopener noreferrer"><svg><use href="#chat"/></svg>Converse com o Thiago<svg class="trailing"><use href="#arrow"/></svg></a></section>
+      <section class="closing" aria-labelledby="closing-title">
+        <img src="assets/fotos/thiago-riso.webp" alt="" loading="lazy" width="1000" height="1502">
+        <div class="closing-copy">
+          <span class="eyebrow" data-reveal>O PRÓXIMO PASSO É UMA CONVERSA</span>
+          <h2 id="closing-title" data-reveal>Vamos deixar<br><em>a sua marca?</em></h2>
+          <a class="button button-gold" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Vim%20pelo%20seu%20cart%C3%A3o%20digital." target="_blank" rel="noopener noreferrer" data-reveal><svg><use href="#chat"/></svg>Chamar no WhatsApp<svg class="trailing"><use href="#arrow"/></svg></a>
+          <a class="text-link" href="thiago-legend.vcf" download data-reveal><svg><use href="#save"/></svg>Salvar o contato na agenda</a>
+        </div>
+      </section>
     </main>
-    <footer><img src="assets/logo-legend-white.png" alt="Legend" width="108"><p>FEITO PARA LENDAS.</p><div><span>© 2026 Legend</span><button id="replay-intro" type="button">Rever abertura</button></div><a class="hm-credit" href="https://www.instagram.com/agencia_hmdigital/" target="_blank" rel="noopener noreferrer" aria-label="Desenvolvido por HM Digital — conheça a agência"><img class="hm-logo" src="assets/HM%20DIGITAL.png" alt="HM" width="82" height="46" loading="lazy"><span class="hm-digital" aria-hidden="true">Digital</span></a></footer>
+
+    <footer>
+      <img src="assets/logo-legend-white.png" alt="Legend" width="104">
+      <p>FEITO PARA LENDAS.</p>
+      <div><span>© 2026 Legend</span><button id="replay-intro" type="button">Rever abertura</button></div>
+      <a class="hm-credit" href="https://www.instagram.com/agencia_hmdigital/" target="_blank" rel="noopener noreferrer" aria-label="Desenvolvido por HM Digital, conheça a agência"><span>Desenvolvido por</span><img src="assets/hm-digital.webp" alt="HM Digital" width="64" height="36" loading="lazy"></a>
+    </footer>
   </div>
 
-  <dialog id="share-dialog" aria-labelledby="share-title"><button class="icon-button dialog-close" id="close-share" aria-label="Fechar compartilhamento"><svg><use href="#close"/></svg></button><span class="eyebrow">BOAS CONEXÕES MERECEM SER COMPARTILHADAS</span><h2 id="share-title">Leve este contato<br><span>com você.</span></h2><p>Envie o cartão do Thiago para alguém ou copie o endereço abaixo.</p><img class="share-qr" src="assets/qr-thiago.png" alt="QR Code para abrir o cartão do Thiago" width="264" height="264"><label for="share-url">Endereço do cartão</label><div class="copy-field"><input id="share-url" type="url" value="https://thiago.uselegend.com" readonly><button id="copy-link" type="button">Copiar</button></div><a id="share-whatsapp" class="button button-gold" href="https://wa.me/?text=Conhe%C3%A7a%20o%20Thiago%2C%20da%20Legend%3A%20https%3A%2F%2Fthiago.uselegend.com" target="_blank" rel="noopener noreferrer"><svg><use href="#chat"/></svg>Enviar pelo WhatsApp</a></dialog>
+  <a class="float-whats" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Vim%20pelo%20seu%20cart%C3%A3o%20digital." target="_blank" rel="noopener noreferrer" aria-label="Chamar o Thiago no WhatsApp"><svg><use href="#chat"/></svg></a>
+
+  <dialog id="video-dialog" class="video-dialog" aria-label="Thiago entregando o kit ao Ronaldinho">
+    <button class="icon-button dialog-close" id="close-video" aria-label="Fechar vídeo"><svg><use href="#close"/></svg></button>
+    <video id="full-video" src="assets/ronaldinho/video.mp4" poster="assets/ronaldinho/poster.jpg" controls playsinline preload="none"></video>
+  </dialog>
+
+  <dialog id="share-dialog" aria-labelledby="share-title">
+    <button class="icon-button dialog-close" id="close-share" aria-label="Fechar compartilhamento"><svg><use href="#close"/></svg></button>
+    <span class="eyebrow">BOAS CONEXÕES MERECEM SER COMPARTILHADAS</span>
+    <h2 id="share-title">Leve este contato<br><em>com você.</em></h2>
+    <img class="share-qr" src="assets/qr-thiago.png" alt="QR Code para abrir o cartão do Thiago" width="220" height="220">
+    <div class="copy-field"><input id="share-url" type="url" value="https://thiago.uselegend.com" readonly aria-label="Endereço do cartão"><button id="copy-link" type="button">Copiar</button></div>
+    <a class="button button-gold" href="https://wa.me/?text=Conhe%C3%A7a%20o%20Thiago%20Henrique%2C%20CEO%20da%20Legend%3A%20https%3A%2F%2Fthiago.uselegend.com" target="_blank" rel="noopener noreferrer"><svg><use href="#chat"/></svg>Enviar pelo WhatsApp</a>
+  </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
