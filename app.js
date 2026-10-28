@@ -5,48 +5,71 @@
   const intro = document.getElementById('intro');
   const page = document.querySelector('.page');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const INTRO_MS = 4400;
-  let introTimer;
-  let hideTimer;
+  const bar = intro.querySelector('.intro-progress i');
+  // Tempo de cada etapa (ms): logos antigas, logo atual, escrita LEGEND, retrato.
+  const STEP_MS = { 1: 1500, 2: 1500, 3: 1500, 4: 1900, 5: 1500 };
+  let timers = [];
   let previousFocus;
 
-  /* ---------- Abertura ---------- */
+  // Uma etapa de logo só entra se a imagem existir (as antigas são opcionais).
+  function stepAvailable(node) {
+    const img = node.querySelector('img');
+    if (!node.classList.contains('intro-logo') || !img) return Promise.resolve(true);
+    if (img.complete) return Promise.resolve(img.naturalWidth > 0);
+    return new Promise(resolve => {
+      img.addEventListener('load', () => resolve(true), { once: true });
+      img.addEventListener('error', () => resolve(false), { once: true });
+    });
+  }
+
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+
   function finishIntro() {
-    clearTimeout(introTimer);
+    clearTimers();
     if (intro.hidden) return;
     intro.classList.add('exit');
     page.inert = false;
     document.body.style.overflow = '';
-    hideTimer = setTimeout(() => {
+    timers.push(setTimeout(() => {
       intro.hidden = true;
-      intro.classList.remove('exit', 'ready');
-    }, 750);
+      intro.classList.remove('exit');
+      intro.querySelectorAll('[data-step]').forEach(node => node.classList.remove('show', 'past'));
+    }, 800));
     if (previousFocus) previousFocus.focus({ preventScroll: true });
   }
 
-  // Reinicia as animações CSS da abertura ao rever.
-  function restartAnimations() {
-    intro.querySelectorAll('*').forEach(node => {
-      node.style.animation = 'none';
-      void node.offsetWidth;
-      node.style.animation = '';
-    });
-  }
-
-  function startIntro(replay = false) {
-    clearTimeout(introTimer);
-    clearTimeout(hideTimer);
+  async function startIntro(replay = false) {
+    clearTimers();
     if (reducedMotion.matches) return;
     previousFocus = replay ? document.activeElement : null;
     intro.hidden = false;
     intro.classList.remove('exit');
-    restartAnimations();
-    intro.classList.add('ready');
     page.inert = true;
     document.body.style.overflow = 'hidden';
     if (replay) window.scrollTo({ top: 0 });
     document.getElementById('skip-intro').focus({ preventScroll: true });
-    introTimer = setTimeout(finishIntro, INTRO_MS);
+
+    const nodes = [...intro.querySelectorAll('[data-step]')];
+    nodes.forEach(node => node.classList.remove('show', 'past'));
+    const flags = await Promise.all(nodes.map(stepAvailable));
+    const steps = nodes.filter((_, i) => flags[i]);
+    const total = steps.reduce((sum, node) => sum + STEP_MS[node.dataset.step], 0);
+
+    bar.style.transition = 'none';
+    bar.style.transform = 'scaleX(0)';
+    void bar.offsetWidth;
+    bar.style.transition = `transform ${total}ms linear`;
+    bar.style.transform = 'scaleX(1)';
+
+    let at = 0;
+    steps.forEach((node, i) => {
+      timers.push(setTimeout(() => {
+        if (i > 0) { steps[i - 1].classList.remove('show'); steps[i - 1].classList.add('past'); }
+        node.classList.add('show');
+      }, at));
+      at += STEP_MS[node.dataset.step];
+    });
+    timers.push(setTimeout(finishIntro, at));
   }
 
   startIntro();

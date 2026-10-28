@@ -6,14 +6,11 @@ Site estático em HTML, CSS e JavaScript, sem dependências de produção e sem 
 
 ## Experiência
 
-- Abertura cinematográfica de cerca de 4,4 segundos: linha de luz dourada, símbolo Legend, retrato do Thiago revelado pelo centro e o nome entrando letra por letra; termina no mesmo retrato da capa. Botão para pular e opção de rever no rodapé.
-- Capa em tela cheia com o retrato, WhatsApp em destaque e atalhos (ligar, salvar contato, Instagram, enviar).
-- Números da Legend, "Sobre mim", momento Ronaldinho Edition com vídeo (em loop sem som, e completo com som ao tocar), galeria de fotos, links em cartões com foto, personalização e fechamento.
-- Fotos otimizadas em `assets/fotos` (WebP) e vídeos em `assets/ronaldinho`, copiados da loja.
-- Abertura uma vez por sessão. Com preferência de movimento reduzido, o cartão abre diretamente.
-- Contato do Thiago por WhatsApp e telefone, vCard para agenda, compartilhamento nativo com alternativa de copiar link.
-- Apresentação, catálogo, loja oficial, Instagram e personalização.
-- Layout para celular com navegação por teclado, diálogo acessível e conteúdo disponível sem JavaScript.
+- Visual claro (papel creme, texto escuro, detalhes dourados), em estilo editorial: serifa fina com script.
+- Abertura de cerca de 7 segundos: a evolução das logos da Legend (bruxo original, segundo bruxo e símbolo atual), a escrita LEGEND com "Feito para lendas" e o retrato do Thiago. As logos antigas ficam em `assets/logos/logo-1.png` e `assets/logos/logo-2.png`; se faltarem, a abertura pula essas etapas.
+- Capa com retrato, nome e botões já na primeira tela.
+- Quem é o Thiago, a trajetória (da ideia em 2022 às camisas de frase, as dificuldades, as primeiras bolsas bordadas, a fábrica própria, o Ronaldinho e os próximos voos), por que ter uma Legend, clubes clientes, links e fechamento.
+- Fotos em `assets/fotos`, peças em recorte em `assets/pecas`, escudos em `assets/clientes` e vídeos em `assets/ronaldinho`. Fontes hospedadas em `assets/fonts`.
 
 ## Conteúdo
 
