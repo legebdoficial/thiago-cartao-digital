@@ -8,7 +8,7 @@
       { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
       { "key": "X-Frame-Options", "value": "DENY" },
       { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-      { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; form-action 'self'" }
+      { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; form-action 'self'" }
     ]},
     { "source": "/thiago-legend.vcf", "headers": [
       { "key": "Content-Type", "value": "text/vcard; charset=utf-8" },
