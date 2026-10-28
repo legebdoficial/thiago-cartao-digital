@@ -6,21 +6,10 @@
   const page = document.querySelector('.page');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const bar = intro.querySelector('.intro-progress i');
-  // Tempo de cada etapa (ms): logos antigas, logo atual, escrita LEGEND, retrato.
-  const STEP_MS = { 1: 1500, 2: 1500, 3: 1500, 4: 1900, 5: 1500 };
+  // Tempo de cada etapa (ms): bruxo original, segundo bruxo, símbolo atual, escrita LEGEND.
+  const STEP_MS = { 1: 1900, 2: 1900, 3: 1500, 4: 2200 };
   let timers = [];
   let previousFocus;
-
-  // Uma etapa de logo só entra se a imagem existir (as antigas são opcionais).
-  function stepAvailable(node) {
-    const img = node.querySelector('img');
-    if (!node.classList.contains('intro-logo') || !img) return Promise.resolve(true);
-    if (img.complete) return Promise.resolve(img.naturalWidth > 0);
-    return new Promise(resolve => {
-      img.addEventListener('load', () => resolve(true), { once: true });
-      img.addEventListener('error', () => resolve(false), { once: true });
-    });
-  }
 
   function clearTimers() { timers.forEach(clearTimeout); timers = []; }
 
@@ -34,11 +23,11 @@
       intro.hidden = true;
       intro.classList.remove('exit');
       intro.querySelectorAll('[data-step]').forEach(node => node.classList.remove('show', 'past'));
-    }, 800));
+    }, 1000));
     if (previousFocus) previousFocus.focus({ preventScroll: true });
   }
 
-  async function startIntro(replay = false) {
+  function startIntro(replay = false) {
     clearTimers();
     if (reducedMotion.matches) return;
     previousFocus = replay ? document.activeElement : null;
@@ -49,10 +38,8 @@
     if (replay) window.scrollTo({ top: 0 });
     document.getElementById('skip-intro').focus({ preventScroll: true });
 
-    const nodes = [...intro.querySelectorAll('[data-step]')];
-    nodes.forEach(node => node.classList.remove('show', 'past'));
-    const flags = await Promise.all(nodes.map(stepAvailable));
-    const steps = nodes.filter((_, i) => flags[i]);
+    const steps = [...intro.querySelectorAll('[data-step]')];
+    steps.forEach(node => node.classList.remove('show', 'past'));
     const total = steps.reduce((sum, node) => sum + STEP_MS[node.dataset.step], 0);
 
     bar.style.transition = 'none';
@@ -122,6 +109,24 @@
     document.querySelectorAll('video[data-autoplay]').forEach(video => player.observe(video));
   } else {
     document.querySelectorAll('[data-reveal]').forEach(node => node.classList.add('in'));
+  }
+
+  /* ---------- Capítulos da trajetória: pontinhos de posição ---------- */
+  const chapters = document.getElementById('chapters');
+  const dots = document.getElementById('chapter-dots');
+  if (chapters && dots) {
+    const items = [...chapters.children];
+    dots.innerHTML = items.map(() => '<i></i>').join('');
+    const marks = [...dots.children];
+    const update = () => {
+      const left = chapters.scrollLeft;
+      let active = 0;
+      items.forEach((item, i) => { if (item.offsetLeft - chapters.offsetLeft - 20 <= left) active = i; });
+      if (left + chapters.clientWidth >= chapters.scrollWidth - 4) active = items.length - 1;
+      marks.forEach((mark, i) => mark.classList.toggle('on', i === active));
+    };
+    chapters.addEventListener('scroll', update, { passive: true });
+    update();
   }
 
   /* ---------- WhatsApp fixo depois da capa ---------- */
