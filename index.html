@@ -129,107 +129,125 @@
 
       <!-- Trajetória em capítulos (deslizar). -->
       <section class="story" aria-labelledby="story-title">
-        <div class="story-head">
-          <span class="eyebrow" data-reveal>A TRAJETÓRIA</span>
-          <h2 id="story-title" data-reveal>De uma ideia<br><span class="script">até o Bruxo.</span></h2>
-          <p class="swipe-hint" data-reveal>Deslize para ver a história <svg><use href="#arrow"/></svg></p>
-        </div>
-        <ol class="chapters" id="chapters">
-          <li class="chapter">
-            <div class="chapter-media media-dark"><svg class="chapter-art" viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
-<path pathLength="1" d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
+        <span class="eyebrow" data-reveal>A TRAJETÓRIA</span>
+        <h2 id="story-title" data-reveal>De uma ideia<br><span class="script">até o Bruxo.</span></h2>
+        <ol class="timeline" id="timeline">
+          <span class="tl-line" aria-hidden="true"><i id="tl-progress"></i></span>
+          <li class="tl-item" data-reveal>
+            <span class="tl-mark"><svg viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
+<path d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
 </g>
 <g fill="currentColor">
-<path pathLength="1" d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
-<path pathLength="1" d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
-</g></svg></div>
-            <div class="chapter-body">
-              <span class="chapter-tag"><b>01</b>2022 · O começo</span>
+<path d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
+<path d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
+</g></svg></span>
+            <div class="tl-body">
+              <span class="tl-tag">2022 · O começo</span>
               <h3>Uma ideia entre amigos</h3>
               <p>Tudo começou numa conversa entre amigos. Dali nasceu o bruxo, a primeira marca da Legend.</p>
             </div>
           </li>
-          <li class="chapter">
-            <div class="chapter-media mosaic mosaic-4"><img src="assets/historia/camisa-melhor-nao.webp" alt="Camisa Melhor não, mas bora" loading="lazy"><img src="assets/historia/camisa-timido.webp" alt="Camisa Falei que era tímido, não santo" loading="lazy"><img src="assets/historia/camisa-rustico.webp" alt="Camisa Feio não, sou rústico" loading="lazy"><img src="assets/historia/camisa-nao-julgo.webp" alt="Camisa Não julgo" loading="lazy"></div>
-            <div class="chapter-body">
-              <span class="chapter-tag"><b>02</b>As camisas</span>
+          <li class="tl-item" data-reveal>
+            <span class="tl-mark"><svg viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
+<path d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
+</g>
+<g fill="currentColor">
+<path d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
+<path d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
+</g></svg></span>
+            <div class="tl-body">
+              <span class="tl-tag">Fase 2</span>
               <h3>As camisas de frase</h3>
-              <p>“Melhor não, mas bora.” “Falei que era tímido, não santo.” Frases com atitude foram o primeiro jeito da Legend falar com o público.</p>
+              <p>Frases com atitude foram o primeiro jeito da Legend falar com o público.</p>
+              <ul class="tl-quotes"><li>“Melhor não, mas bora.”</li><li>“Falei que era tímido, não santo.”</li><li>“Feio não! Sou rústico.”</li></ul>
             </div>
           </li>
-          <li class="chapter">
-            <div class="chapter-media"><img src="assets/historia/bruxo-fogo.webp" alt="O bruxo da Legend em meio ao fogo" loading="lazy"></div>
-            <div class="chapter-body">
-              <span class="chapter-tag"><b>03</b>A virada</span>
+          <li class="tl-item" data-reveal>
+            <span class="tl-mark"><svg viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
+<path d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
+</g>
+<g fill="currentColor">
+<path d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
+<path d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
+</g></svg></span>
+            <div class="tl-body">
+              <span class="tl-tag">Fase 3</span>
               <h3>As dificuldades</h3>
               <p>Teve fase difícil, como em toda história que vale a pena. O bruxo passou pelo fogo e saiu mais forte.</p>
             </div>
           </li>
-          <li class="chapter">
-            <div class="chapter-media mosaic mosaic-6"><img src="assets/historia/mochila-bege.webp" alt="Mochila bege com o bruxo" loading="lazy"><img src="assets/historia/mochila-vermelha.webp" alt="Mochila vermelha com o bruxo" loading="lazy"><img src="assets/historia/mochila-branca.webp" alt="Mochila branca com o bruxo" loading="lazy"><img src="assets/historia/mochila-rosa.webp" alt="Mochila rosa com o bruxo" loading="lazy"><img src="assets/historia/mochila-caramelo.webp" alt="Mochila caramelo com o bruxo" loading="lazy"><img src="assets/historia/mochila-preta.webp" alt="Mochila preta com o bruxo" loading="lazy"></div>
-            <div class="chapter-body">
-              <span class="chapter-tag"><b>04</b>As bolsas</span>
+          <li class="tl-item" data-reveal>
+            <span class="tl-mark"><svg viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
+<path d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
+</g>
+<g fill="currentColor">
+<path d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
+<path d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
+</g></svg></span>
+            <div class="tl-body">
+              <span class="tl-tag">Fase 4</span>
               <h3>As primeiras bolsas</h3>
               <p>Vieram as primeiras mochilas, em várias cores, com o bruxo bordado. Ali a Legend encontrou o seu produto.</p>
             </div>
           </li>
-          <li class="chapter">
-            <div class="chapter-media mosaic mosaic-3"><img src="assets/historia/mochila-preta-bruxo.webp" alt="Mochila preta com o bruxo nas costas" loading="lazy"><img src="assets/historia/bolsa-preta-bruxo.webp" alt="Mochila preta de viagem com o bruxo" loading="lazy"><img src="assets/historia/necessaire-legend.webp" alt="Necessaire com a escrita LEGEND" loading="lazy"></div>
-            <div class="chapter-body">
-              <span class="chapter-tag"><b>05</b>A evolução</span>
-              <h3>A marca amadurece</h3>
-              <p>As peças ficaram mais sóbrias e a escrita LEGEND ganhou espaço. A identidade evoluiu até o símbolo de hoje.</p>
-              <div class="logo-evolution" aria-label="Evolução da marca">
-                <svg viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
-<path pathLength="1" d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
-</g>
-<g fill="currentColor">
-<path pathLength="1" d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
-<path pathLength="1" d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
-</g></svg><i></i>
-                <svg viewBox="0 0 1280 1280" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="30" stroke-linejoin="miter" stroke-miterlimit="8">
-<path pathLength="1" d="M640 100 C730 140 800 185 848 240 L670 210 L832 425 L1094 442 C1030 520 935 580 836 612 L882 800 L828 860 L840 1050 L768 975 L640 1182 L512 975 L440 1050 L452 860 L398 800 L444 612 C345 580 250 520 186 442 L448 425 Z"/>
+          <li class="tl-item" data-reveal>
+            <span class="tl-mark"><svg viewBox="0 0 1280 1280" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="30" stroke-linejoin="miter" stroke-miterlimit="8">
+<path d="M640 100 C730 140 800 185 848 240 L670 210 L832 425 L1094 442 C1030 520 935 580 836 612 L882 800 L828 860 L840 1050 L768 975 L640 1182 L512 975 L440 1050 L452 860 L398 800 L444 612 C345 580 250 520 186 442 L448 425 Z"/>
 </g>
 <g fill="none" stroke="currentColor" stroke-width="22" stroke-linejoin="miter">
-<path pathLength="1" d="M512 622 L534 712 L622 712 L622 690"/>
-<path pathLength="1" d="M640 625 L775 622 L762 700 L735 700"/>
-<path pathLength="1" d="M556 885 L546 800 L738 798 L728 885"/>
-</g></svg><i></i>
-                <img src="assets/symbol-legend-black.png" alt="">
-              </div>
+<path d="M512 622 L534 712 L622 712 L622 690"/>
+<path d="M640 625 L775 622 L762 700 L735 700"/>
+<path d="M556 885 L546 800 L738 798 L728 885"/>
+</g></svg></span>
+            <div class="tl-body">
+              <span class="tl-tag">Fase 5</span>
+              <h3>A marca amadurece</h3>
+              <p>As peças ficaram mais sóbrias e a identidade evoluiu: do primeiro bruxo ao símbolo de hoje.</p>
+              <div class="logo-evolution" aria-label="Evolução da marca"><svg viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
+<path d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
+</g>
+<g fill="currentColor">
+<path d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
+<path d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
+</g></svg><i></i><svg viewBox="0 0 1280 1280" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="30" stroke-linejoin="miter" stroke-miterlimit="8">
+<path d="M640 100 C730 140 800 185 848 240 L670 210 L832 425 L1094 442 C1030 520 935 580 836 612 L882 800 L828 860 L840 1050 L768 975 L640 1182 L512 975 L440 1050 L452 860 L398 800 L444 612 C345 580 250 520 186 442 L448 425 Z"/>
+</g>
+<g fill="none" stroke="currentColor" stroke-width="22" stroke-linejoin="miter">
+<path d="M512 622 L534 712 L622 712 L622 690"/>
+<path d="M640 625 L775 622 L762 700 L735 700"/>
+<path d="M556 885 L546 800 L738 798 L728 885"/>
+</g></svg><i></i><img src="assets/symbol-legend-black.png" alt=""></div>
             </div>
           </li>
-          <li class="chapter">
-            <div class="chapter-media media-cream"><img class="chapter-bag" src="assets/pecas/mala.webp" alt="Mala Legend bordada com o nome Thiago H." loading="lazy"></div>
-            <div class="chapter-body">
-              <span class="chapter-tag"><b>06</b>Hoje</span>
+          <li class="tl-item" data-reveal>
+            <span class="tl-mark"><img src="assets/symbol-legend-black.png" alt=""></span>
+            <div class="tl-body">
+              <span class="tl-tag">Hoje</span>
               <h3>Fábrica própria</h3>
-              <p>Do corte ao bordado, tudo feito na nossa fábrica. <strong class="inline-big">+5 mil</strong> pessoas já usam Legend pelo mundo.</p>
+              <p>Do corte ao bordado, tudo feito na nossa fábrica. Mais de 5 mil pessoas já usam Legend pelo mundo.</p>
             </div>
           </li>
-          <li class="chapter chapter-dark">
-            <div class="chapter-media">
-              <button class="r10-video" type="button" id="open-video" aria-label="Assistir ao vídeo do Thiago com o Ronaldinho">
-                <video src="assets/ronaldinho/loop.mp4" poster="assets/ronaldinho/poster.jpg" muted loop playsinline preload="none" data-autoplay></video>
-                <span class="r10-play"><svg><use href="#play"/></svg>Assistir</span>
-              </button>
-            </div>
-            <div class="chapter-body">
-              <span class="chapter-tag"><b>07</b>O ápice</span>
+          <li class="tl-item tl-highlight" data-reveal>
+            <span class="tl-mark"><b>★</b></span>
+            <div class="tl-body">
+              <span class="tl-tag">O ápice</span>
               <h3>Até chegar no Bruxo</h3>
               <p>O kit nº 01 da edição Ronaldinho foi entregue pelo Thiago ao próprio Ronaldinho Gaúcho.</p>
+              <button class="r10-video" type="button" id="open-video" aria-label="Assistir ao vídeo do Thiago com o Ronaldinho">
+                <video src="assets/ronaldinho/loop.mp4" poster="assets/ronaldinho/poster.jpg" muted loop playsinline preload="none" data-autoplay></video>
+                <span class="r10-play"><svg><use href="#play"/></svg>Assistir ao momento</span>
+              </button>
             </div>
           </li>
-          <li class="chapter chapter-gold">
-            <div class="chapter-media media-gold"><img class="chapter-symbol" src="assets/symbol-legend-black.png" alt="" loading="lazy"></div>
-            <div class="chapter-body">
-              <span class="chapter-tag"><b>08</b>O futuro</span>
+          <li class="tl-item tl-future" data-reveal>
+            <span class="tl-mark"><img src="assets/symbol-legend-black.png" alt=""></span>
+            <div class="tl-body">
+              <span class="tl-tag">O futuro</span>
               <h3>Os próximos voos</h3>
               <p>Isso é só o começo. Os próximos voos da Legend são muito maiores.</p>
             </div>
           </li>
         </ol>
-        <div class="chapter-dots" id="chapter-dots" aria-hidden="true"></div>
       </section>
 
       <!-- Por que ter uma Legend: vitrine da mochila com os diferenciais. -->

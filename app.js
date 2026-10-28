@@ -111,22 +111,26 @@
     document.querySelectorAll('[data-reveal]').forEach(node => node.classList.add('in'));
   }
 
-  /* ---------- Capítulos da trajetória: pontinhos de posição ---------- */
-  const chapters = document.getElementById('chapters');
-  const dots = document.getElementById('chapter-dots');
-  if (chapters && dots) {
-    const items = [...chapters.children];
-    dots.innerHTML = items.map(() => '<i></i>').join('');
-    const marks = [...dots.children];
-    const update = () => {
-      const left = chapters.scrollLeft;
-      let active = 0;
-      items.forEach((item, i) => { if (item.offsetLeft - chapters.offsetLeft - 20 <= left) active = i; });
-      if (left + chapters.clientWidth >= chapters.scrollWidth - 4) active = items.length - 1;
-      marks.forEach((mark, i) => mark.classList.toggle('on', i === active));
+  /* ---------- Linha do tempo: a linha se acende conforme a rolagem ---------- */
+  const timeline = document.getElementById('timeline');
+  const progress = document.getElementById('tl-progress');
+  if (timeline && progress) {
+    const items = [...timeline.querySelectorAll('.tl-item')];
+    let ticking = false;
+    const paint = () => {
+      ticking = false;
+      const box = timeline.getBoundingClientRect();
+      const anchor = window.innerHeight * 0.62;
+      const ratio = Math.min(1, Math.max(0, (anchor - box.top) / box.height));
+      progress.style.transform = `scaleY(${ratio})`;
+      items.forEach(item => {
+        const mark = item.querySelector('.tl-mark').getBoundingClientRect();
+        item.classList.toggle('reached', mark.top + mark.height / 2 < anchor);
+      });
     };
-    chapters.addEventListener('scroll', update, { passive: true });
-    update();
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }, { passive: true });
+    window.addEventListener('resize', paint);
+    paint();
   }
 
   /* ---------- WhatsApp fixo depois da capa ---------- */
