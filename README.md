@@ -7,7 +7,7 @@ Site estático em HTML, CSS e JavaScript, sem dependências de produção e sem 
 ## Experiência
 
 - Visual claro (papel creme, texto escuro, detalhes dourados), em estilo editorial: serifa fina com script.
-- Abertura de cerca de 7 segundos: a evolução das logos da Legend (bruxo original, segundo bruxo e símbolo atual), a escrita LEGEND com "Feito para lendas" e o retrato do Thiago. As logos antigas ficam em `assets/logos/logo-1.png` e `assets/logos/logo-2.png`; se faltarem, a abertura pula essas etapas.
+- Abertura de cerca de 5,5 segundos: a evolução das logos da Legend (bruxo original, segundo bruxo e símbolo atual), a escrita LEGEND com "Feito para lendas" e o retrato do Thiago. As logos antigas ficam em `assets/logos/logo-1.png` e `assets/logos/logo-2.png`; se faltarem, a abertura pula essas etapas.
 - Capa com retrato, nome e botões já na primeira tela.
 - Quem é o Thiago, a trajetória (da ideia em 2022 às camisas de frase, as dificuldades, as primeiras bolsas bordadas, a fábrica própria, o Ronaldinho e os próximos voos), por que ter uma Legend, clubes clientes, links e fechamento.
 - Fotos em `assets/fotos`, peças em recorte em `assets/pecas`, escudos em `assets/clientes` e vídeos em `assets/ronaldinho`. Fontes hospedadas em `assets/fonts`.

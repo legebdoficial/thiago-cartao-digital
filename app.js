@@ -7,7 +7,7 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const bar = intro.querySelector('.intro-progress i');
   // Tempo de cada etapa (ms): bruxo original, segundo bruxo, símbolo atual, escrita LEGEND.
-  const STEP_MS = { 1: 1900, 2: 1900, 3: 1500, 4: 2200 };
+  const STEP_MS = { 1: 1350, 2: 1350, 3: 1050, 4: 1650 };
   let timers = [];
   let previousFocus;
 

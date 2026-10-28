@@ -47,17 +47,17 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke
 /* Traço se desenhando: o contorno nasce e o preenchimento aparece no fim. */
 .draw path{stroke-dasharray:1;stroke-dashoffset:1}
 .draw [fill="currentColor"]{opacity:0}
-.show .draw path{animation:draw 1.15s var(--ease) forwards}
-.show .draw g + g path{animation-delay:.55s}
-.show .draw [fill="currentColor"]{animation:fillin .5s ease .95s forwards}
+.show .draw path{animation:draw .85s var(--ease) forwards}
+.show .draw g + g path{animation-delay:.4s}
+.show .draw [fill="currentColor"]{animation:fillin .4s ease .7s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fillin{to{opacity:1}}
 .intro-mark-now.show img{animation:glow 1.3s var(--ease) both}
 @keyframes glow{from{filter:drop-shadow(0 0 0 rgba(210,178,116,0))}50%{filter:drop-shadow(0 0 26px rgba(210,178,116,.65))}to{filter:drop-shadow(0 0 8px rgba(210,178,116,.25))}}
 .intro-word{display:grid;justify-items:center;gap:20px}
-.intro-word img{width:min(68vw,290px);clip-path:inset(0 100% 0 0);transition:clip-path 1.1s var(--ease) .15s}
+.intro-word img{width:min(68vw,290px);clip-path:inset(0 100% 0 0);transition:clip-path .8s var(--ease) .1s}
 .intro-word.show img{clip-path:inset(0 0 0 0)}
-.intro-word span{font-size:11px;font-weight:500;letter-spacing:.18em;padding-left:.18em;color:var(--gold-soft);opacity:0;transition:opacity .9s var(--ease) .8s,letter-spacing 1.5s var(--ease) .8s,padding 1.5s var(--ease) .8s}
+.intro-word span{font-size:11px;font-weight:500;letter-spacing:.18em;padding-left:.18em;color:var(--gold-soft);opacity:0;transition:opacity .7s var(--ease) .55s,letter-spacing 1.1s var(--ease) .55s,padding 1.1s var(--ease) .55s}
 .intro-word.show span{opacity:1;letter-spacing:.6em;padding-left:.6em}
 .intro-progress{position:absolute;left:50%;bottom:max(36px,env(safe-area-inset-bottom));width:120px;height:2px;border-radius:2px;background:rgba(255,255,255,.12);transform:translateX(-50%);overflow:hidden}
 .intro-progress i{display:block;height:100%;background:var(--gold-soft);transform:scaleX(0);transform-origin:left}
