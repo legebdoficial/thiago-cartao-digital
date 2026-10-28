@@ -45,6 +45,9 @@
     e a cortina abre revelando o cartão. Os bruxos foram redesenhados em vetor.
   -->
   <div class="intro" id="intro" hidden aria-label="Abertura Legend: a evolução da marca">
+    <div class="intro-ring" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92"/><circle class="ring-arc" cx="100" cy="100" r="92" pathLength="100"/></svg>
+    </div>
     <div class="intro-stage">
       <figure class="intro-mark" data-step="1">
         <svg class="draw" viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
@@ -54,10 +57,9 @@
 <path pathLength="1" d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
 <path pathLength="1" d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
 </g></svg>
-        <figcaption><span>01</span>O começo</figcaption>
       </figure>
       <figure class="intro-mark" data-step="2">
-        <svg class="draw" viewBox="0 0 1280 1280" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="30" stroke-linejoin="miter" stroke-miterlimit="8">
+        <svg viewBox="0 0 1280 1280" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="30" stroke-linejoin="miter" stroke-miterlimit="8">
 <path pathLength="1" d="M640 100 C730 140 800 185 848 240 L670 210 L832 425 L1094 442 C1030 520 935 580 836 612 L882 800 L828 860 L840 1050 L768 975 L640 1182 L512 975 L440 1050 L452 860 L398 800 L444 612 C345 580 250 520 186 442 L448 425 Z"/>
 </g>
 <g fill="none" stroke="currentColor" stroke-width="22" stroke-linejoin="miter">
@@ -65,11 +67,9 @@
 <path pathLength="1" d="M640 625 L775 622 L762 700 L735 700"/>
 <path pathLength="1" d="M556 885 L546 800 L738 798 L728 885"/>
 </g></svg>
-        <figcaption><span>02</span>A evolução</figcaption>
       </figure>
       <figure class="intro-mark intro-mark-now" data-step="3">
         <img src="assets/symbol-legend-white.png" alt="">
-        <figcaption><span>03</span>Hoje</figcaption>
       </figure>
       <div class="intro-word" data-step="4">
         <img src="assets/logo-legend-white.png" alt="Legend">
@@ -191,13 +191,12 @@
             </div>
           </li>
           <li class="tl-item" data-reveal>
-            <span class="tl-mark"><svg viewBox="0 0 1280 1280" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="30" stroke-linejoin="miter" stroke-miterlimit="8">
-<path d="M640 100 C730 140 800 185 848 240 L670 210 L832 425 L1094 442 C1030 520 935 580 836 612 L882 800 L828 860 L840 1050 L768 975 L640 1182 L512 975 L440 1050 L452 860 L398 800 L444 612 C345 580 250 520 186 442 L448 425 Z"/>
+            <span class="tl-mark"><svg viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
+<path d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
 </g>
-<g fill="none" stroke="currentColor" stroke-width="22" stroke-linejoin="miter">
-<path d="M512 622 L534 712 L622 712 L622 690"/>
-<path d="M640 625 L775 622 L762 700 L735 700"/>
-<path d="M556 885 L546 800 L738 798 L728 885"/>
+<g fill="currentColor">
+<path d="M500 532 C560 548 600 552 625 545 C660 552 710 548 750 532 C752 580 735 615 715 640 C705 610 690 598 650 600 L645 568 C635 600 615 600 600 568 L598 600 C560 600 548 612 540 640 C515 610 500 575 500 532 Z"/>
+<path d="M565 684 C590 640 660 640 688 684 C660 664 592 664 565 684 Z"/>
 </g></svg></span>
             <div class="tl-body">
               <span class="tl-tag"><b>2024</b>A fábrica</span>
@@ -210,7 +209,7 @@
             <div class="tl-body">
               <span class="tl-tag"><b>2025</b>A nova marca</span>
               <h3>A marca amadurece</h3>
-              <p>As peças ficaram mais sóbrias e a identidade evoluiu: do primeiro bruxo ao símbolo de hoje.</p>
+              <p>A identidade evoluiu: chegaram o novo bruxo e o símbolo de hoje, e as peças ficaram mais sóbrias.</p>
               <div class="logo-evolution" aria-label="Evolução da marca"><svg viewBox="0 0 1254 1254" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="26" stroke-linejoin="round" stroke-linecap="round">
 <path d="M628 112 C660 112 700 140 738 166 L796 272 C760 260 722 248 700 238 C712 268 760 302 852 344 L826 380 L1028 452 C1030 478 1000 492 830 534 L830 596 C885 660 912 720 904 796 L862 742 C880 790 870 840 908 888 C870 885 840 860 820 832 C800 880 800 940 842 1000 C800 995 760 980 738 932 C700 980 680 1040 704 1100 C640 1080 590 1030 560 960 C530 1000 505 1020 482 1030 C490 980 470 900 455 860 C430 880 410 900 396 912 C400 870 410 820 412 742 C390 760 370 800 366 828 C330 760 330 690 342 660 C360 620 390 610 410 600 L430 534 C330 515 245 490 222 462 C226 450 240 444 418 386 L396 360 C470 300 520 268 548 248 C520 252 490 262 460 270 L515 168 C560 140 600 112 628 112 Z"/>
 </g>

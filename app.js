@@ -7,7 +7,7 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const bar = intro.querySelector('.intro-progress i');
   // Tempo de cada etapa (ms): bruxo original, segundo bruxo, símbolo atual, escrita LEGEND.
-  const STEP_MS = { 1: 1350, 2: 1350, 3: 1050, 4: 1650 };
+  const STEP_MS = { 1: 1400, 2: 1050, 3: 1150, 4: 1800 };
   let timers = [];
   let previousFocus;
 
@@ -23,6 +23,7 @@
       intro.hidden = true;
       intro.classList.remove('exit');
       intro.querySelectorAll('[data-step]').forEach(node => node.classList.remove('show', 'past'));
+      delete intro.dataset.step;
     }, 1000));
     if (previousFocus) previousFocus.focus({ preventScroll: true });
   }
@@ -53,6 +54,7 @@
       timers.push(setTimeout(() => {
         if (i > 0) { steps[i - 1].classList.remove('show'); steps[i - 1].classList.add('past'); }
         node.classList.add('show');
+        intro.dataset.step = node.dataset.step;
       }, at));
       at += STEP_MS[node.dataset.step];
     });

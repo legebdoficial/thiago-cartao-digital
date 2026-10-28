@@ -35,25 +35,36 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke
 .intro{position:fixed;inset:0;z-index:100;background:radial-gradient(70% 50% at 50% 45%,#1d1a15,#0b0a08 70%);color:#f3ede1;overflow:hidden;transition:clip-path 1s var(--ease)}
 .intro[hidden]{display:none}
 .intro.exit{clip-path:inset(0 0 100% 0)}
-.intro-stage{position:absolute;inset:0;display:grid;place-items:center}
-.intro-stage>*{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transform:scale(.92);filter:blur(8px);transition:opacity .6s var(--ease),transform .9s var(--ease),filter .6s var(--ease),visibility 0s .9s}
-.intro-stage>.show{opacity:1;visibility:visible;transform:none;filter:none;transition:opacity .6s var(--ease),transform .9s var(--ease),filter .6s var(--ease),visibility 0s}
-.intro-stage>.past{transform:scale(1.1)}
-.intro-mark{display:grid;justify-items:center;gap:26px}
-.intro-mark svg,.intro-mark img{width:min(64vw,270px);height:min(64vw,270px);object-fit:contain}
-.intro-mark-now img{width:min(54vw,220px)}
-.intro-mark figcaption{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-style:italic;font-size:22px;color:#cfc6b4}
-.intro-mark figcaption span{font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.3em;color:var(--gold-soft)}
-/* Traço se desenhando: o contorno nasce e o preenchimento aparece no fim. */
+.intro-stage{position:absolute;inset:0;display:grid;place-items:center;perspective:900px}
+.intro-stage>*{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),transform .75s cubic-bezier(.6,0,.25,1),visibility 0s .75s}
+.intro-stage>.show{opacity:1;visibility:visible;transition:opacity .45s var(--ease) .1s,transform .75s cubic-bezier(.6,0,.25,1),visibility 0s}
+/* Giro de moeda: cada logo entra girando e sai girando para a próxima. */
+.intro-mark{transform:rotateY(-100deg) scale(.86)}
+.intro-mark.show{transform:rotateY(0) scale(1)}
+.intro-mark.past{transform:rotateY(100deg) scale(.86);opacity:0}
+.intro-mark svg,.intro-mark img{width:min(54vw,230px);height:min(54vw,230px);object-fit:contain;filter:drop-shadow(0 0 18px rgba(210,178,116,.18))}
+.intro-mark-now img{width:min(46vw,190px)}
+.intro-mark-now.show img{animation:glow 1.1s var(--ease) .25s both}
+/* O primeiro bruxo nasce desenhado; os seguintes chegam no giro. */
 .draw path{stroke-dasharray:1;stroke-dashoffset:1}
 .draw [fill="currentColor"]{opacity:0}
-.show .draw path{animation:draw .85s var(--ease) forwards}
-.show .draw g + g path{animation-delay:.4s}
-.show .draw [fill="currentColor"]{animation:fillin .4s ease .7s forwards}
+.show .draw path{animation:draw .9s var(--ease) forwards}
+.show .draw g + g path{animation-delay:.35s}
+.show .draw [fill="currentColor"]{animation:fillin .35s ease .75s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fillin{to{opacity:1}}
-.intro-mark-now.show img{animation:glow 1.3s var(--ease) both}
-@keyframes glow{from{filter:drop-shadow(0 0 0 rgba(210,178,116,0))}50%{filter:drop-shadow(0 0 26px rgba(210,178,116,.65))}to{filter:drop-shadow(0 0 8px rgba(210,178,116,.25))}}
+@keyframes glow{from{filter:drop-shadow(0 0 0 rgba(210,178,116,0))}50%{filter:drop-shadow(0 0 30px rgba(210,178,116,.7))}to{filter:drop-shadow(0 0 10px rgba(210,178,116,.3))}}
+/* Anel dourado girando atrás das logos; some quando a escrita LEGEND entra. */
+.intro-ring{position:absolute;left:50%;top:50%;width:min(80vw,340px);aspect-ratio:1;transform:translate(-50%,-50%) scale(.8);opacity:0;transition:opacity .6s var(--ease),transform 1s var(--ease)}
+.intro-ring svg{width:100%;height:100%;animation:spin 3.2s linear infinite}
+.intro-ring circle{fill:none;stroke:rgba(210,178,116,.14);stroke-width:1}
+.intro-ring .ring-arc{stroke:var(--gold-soft);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:22 78}
+.intro[data-step="1"] .intro-ring,.intro[data-step="2"] .intro-ring,.intro[data-step="3"] .intro-ring{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.intro[data-step="2"] .intro-ring svg,.intro[data-step="3"] .intro-ring svg{animation-duration:1.6s}
+.intro[data-step="4"] .intro-ring{opacity:0;transform:translate(-50%,-50%) scale(1.7)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.intro-word{transform:scale(.94)}
+.intro-word.show{transform:none}
 .intro-word{display:grid;justify-items:center;gap:20px}
 .intro-word img{width:min(68vw,290px);clip-path:inset(0 100% 0 0);transition:clip-path .8s var(--ease) .1s}
 .intro-word.show img{clip-path:inset(0 0 0 0)}
