@@ -13,15 +13,35 @@
 
   function clearTimers() { timers.forEach(clearTimeout); timers = []; }
 
+  // Final da abertura: a escrita LEGEND encolhe e sobe até a logo do topo,
+  // enquanto o fundo escuro some e revela o cartão por baixo.
   function finishIntro() {
     clearTimers();
     if (intro.hidden) return;
+    const word = intro.querySelector('.intro-word');
+    const wordImg = word.querySelector('img');
+    const target = document.getElementById('topbar-logo');
+    if (word.classList.contains('show') && target && !reducedMotion.matches) {
+      const from = wordImg.getBoundingClientRect();
+      const to = target.getBoundingClientRect();
+      const dx = (to.left + to.width / 2) - (from.left + from.width / 2);
+      const dy = (to.top + to.height / 2) - (from.top + from.height / 2);
+      wordImg.style.transition = 'transform .95s cubic-bezier(.65,0,.25,1), filter .95s ease';
+      wordImg.style.transform = `translate(${dx}px, ${dy}px) scale(${to.width / from.width})`;
+      wordImg.style.filter = 'invert(1)';
+    }
     intro.classList.add('exit');
     page.inert = false;
     document.body.style.overflow = '';
     timers.push(setTimeout(() => {
+      document.documentElement.classList.remove('intro-running');
+    }, 900));
+    timers.push(setTimeout(() => {
       intro.hidden = true;
       intro.classList.remove('exit');
+      wordImg.style.transition = 'none';
+      wordImg.style.transform = '';
+      wordImg.style.filter = '';
       intro.querySelectorAll('[data-step]').forEach(node => node.classList.remove('show', 'past'));
       delete intro.dataset.step;
     }, 1000));
@@ -34,9 +54,10 @@
     previousFocus = replay ? document.activeElement : null;
     intro.hidden = false;
     intro.classList.remove('exit');
+    document.documentElement.classList.add('intro-running');
+    window.scrollTo({ top: 0 });
     page.inert = true;
     document.body.style.overflow = 'hidden';
-    if (replay) window.scrollTo({ top: 0 });
     document.getElementById('skip-intro').focus({ preventScroll: true });
 
     const steps = [...intro.querySelectorAll('[data-step]')];
@@ -134,18 +155,6 @@
     window.addEventListener('resize', paint);
     paint();
   }
-
-  /* ---------- WhatsApp fixo depois da capa ---------- */
-  const floatWhats = document.querySelector('.float-whats');
-  const hero = document.querySelector('.hero');
-  const closing = document.querySelector('.closing');
-  const onScroll = () => {
-    const pastHero = hero.getBoundingClientRect().bottom < 0;
-    const atClosing = closing.getBoundingClientRect().top < window.innerHeight * 0.6;
-    floatWhats.classList.toggle('visible', pastHero && !atClosing);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
   /* ---------- Vídeo do Ronaldinho com som ---------- */
   const videoDialog = document.getElementById('video-dialog');

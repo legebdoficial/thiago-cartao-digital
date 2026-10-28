@@ -82,7 +82,7 @@
 
   <div class="page">
     <header class="topbar">
-      <img src="assets/logo-legend-black.png" alt="Legend" width="78">
+      <img id="topbar-logo" src="assets/logo-legend-black.png" alt="Legend" width="78">
       <div class="topbar-actions">
         <a class="icon-button" href="tel:+5562983445081" aria-label="Ligar para o Thiago"><svg><use href="#phone"/></svg></a>
         <a class="icon-button" href="thiago-legend.vcf" download aria-label="Salvar contato na agenda"><svg><use href="#save"/></svg></a>
@@ -95,13 +95,12 @@
       <section class="hero" aria-labelledby="hero-title">
         <figure class="hero-card">
           <img src="assets/fotos/thiago-estudio.webp" alt="Thiago Henrique, CEO da Legend" width="1000" height="1502" fetchpriority="high">
-          <figcaption><img src="assets/symbol-legend-black.png" alt="" width="18">CEO DA LEGEND</figcaption>
         </figure>
         <div class="hero-name">
+          <span class="eyebrow">CEO DA LEGEND</span>
           <h1 id="hero-title">Thiago <span class="script">Henrique</span></h1>
           <p>Transformando histórias em identidade.</p>
         </div>
-        <a class="button button-dark" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Vim%20pelo%20seu%20cart%C3%A3o%20digital." target="_blank" rel="noopener noreferrer"><svg><use href="#chat"/></svg>Falar com o Thiago no WhatsApp<svg class="trailing"><use href="#arrow"/></svg></a>
         <nav class="tiles" aria-label="Links da Legend e do Thiago">
           <a href="https://uselegend.com" target="_blank" rel="noopener noreferrer"><svg><use href="#bag"/></svg><span><strong>Loja oficial</strong><em>Compre em até 12x</em></span><svg class="corner"><use href="#arrow-up"/></svg></a>
           <a href="https://catalogo.uselegend.com" target="_blank" rel="noopener noreferrer"><svg><use href="#book"/></svg><span><strong>Catálogo</strong><em>Kits e modelos</em></span><svg class="corner"><use href="#arrow-up"/></svg></a>
@@ -286,7 +285,11 @@
     </footer>
   </div>
 
-  <a class="float-whats" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Vim%20pelo%20seu%20cart%C3%A3o%20digital." target="_blank" rel="noopener noreferrer" aria-label="Chamar o Thiago no WhatsApp"><svg><use href="#chat"/></svg></a>
+  <!-- Barra fixa na base: o WhatsApp sempre à mão, como um "agendar" de app. -->
+  <div class="bottom-bar">
+    <a class="button button-dark" href="https://wa.me/5562983445081?text=Ol%C3%A1%2C%20Thiago!%20Vim%20pelo%20seu%20cart%C3%A3o%20digital." target="_blank" rel="noopener noreferrer"><svg><use href="#chat"/></svg>Falar com o Thiago<svg class="trailing"><use href="#arrow"/></svg></a>
+    <a class="bar-icon" href="tel:+5562983445081" aria-label="Ligar para o Thiago"><svg><use href="#phone"/></svg></a>
+  </div>
 
   <dialog id="video-dialog" class="video-dialog" aria-label="Thiago entregando o kit ao Ronaldinho">
     <button class="icon-button dialog-close" id="close-video" aria-label="Fechar vídeo"><svg><use href="#close"/></svg></button>
