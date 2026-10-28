@@ -128,6 +128,8 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke
 .tl-item:nth-of-type(odd) .tl-body{grid-column:1}
 .tl-item:nth-of-type(even) .tl-body{grid-column:3;text-align:left}
 .tl-tag{display:block;font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.tl-tag b{display:block;margin-bottom:2px;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1;letter-spacing:.02em;text-transform:none;color:var(--gold)}
+.tl-future .tl-tag b{font-size:22px}
 .tl-body h3{margin:6px 0 0;font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.12}
 .tl-body p{margin:6px 0 0;font-size:13px;line-height:1.5;color:var(--ink-soft)}
 .tl-quotes{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
