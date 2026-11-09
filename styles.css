@@ -33,9 +33,9 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke
 
 /* ================= ABERTURA (vídeo em traço + logo que sobe) ================= */
 .intro{position:fixed;inset:0;z-index:100;color:#141210;overflow:hidden}
-.intro::before{content:"";position:absolute;inset:0;background:#fefffd;transition:opacity .9s var(--ease)}
+.intro::before{content:"";position:absolute;inset:0;background:#f5f1e9;transition:opacity .9s var(--ease)}
 .intro[hidden]{display:none}
-.intro-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#fefffd;transition:opacity .7s var(--ease),transform 1.2s var(--ease)}
+.intro-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#f5f1e9;transition:opacity .7s var(--ease),transform 1.2s var(--ease)}
 @media (min-aspect-ratio:3/4){.intro-video{object-fit:contain}}
 .intro.word .intro-video{opacity:0;transform:scale(1.06)}
 .intro-word{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:20px;pointer-events:none}
