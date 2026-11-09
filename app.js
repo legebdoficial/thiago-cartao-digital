@@ -61,10 +61,8 @@
       const dx = (to.left + to.width / 2) - (from.left + from.width / 2);
       const dy = (to.top + to.height / 2) - (from.top + from.height / 2);
       void wordImg.offsetWidth;
-      // Sobe e passa de branca (sobre o escuro) para preta (sobre o cartão).
-      wordImg.style.transition = 'transform .95s cubic-bezier(.65,0,.25,1), filter .95s ease';
+      wordImg.style.transition = 'transform .95s cubic-bezier(.65,0,.25,1)';
       wordImg.style.transform = `translate(${dx}px, ${dy}px) scale(${to.width / from.width})`;
-      wordImg.style.filter = 'invert(1)';
     }
     intro.classList.add('exit');
     video.pause();
