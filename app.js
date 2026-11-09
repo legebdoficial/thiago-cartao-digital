@@ -6,31 +6,62 @@
   const page = document.querySelector('.page');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const bar = intro.querySelector('.intro-progress i');
-  // Tempo de cada etapa (ms): bruxo original, segundo bruxo, símbolo atual, escrita LEGEND.
-  const STEP_MS = { 1: 1400, 2: 1050, 3: 1150, 4: 1800 };
+  const video = document.getElementById('intro-video');
+  const word = document.getElementById('intro-word');
+  const wordImg = word.querySelector('img');
+  const WORD_MS = 1900;      // tempo da escrita LEGEND no centro antes de subir
+  const WORD_LEAD = 0.45;    // a escrita começa a entrar um pouco antes do vídeo acabar (s)
   let timers = [];
   let previousFocus;
+  let running = false;
+  let wordShown = false;
+  let raf = 0;
 
-  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf); }
+
+  // Barra de progresso acompanha o vídeo; a parte final é a da escrita LEGEND.
+  function paintBar() {
+    if (!running) return;
+    if (!wordShown && video.duration) {
+      const ratio = Math.min(1, video.currentTime / video.duration);
+      bar.style.transform = `scaleX(${ratio * 0.85})`;
+      if (video.duration - video.currentTime <= WORD_LEAD) showWord();
+    }
+    raf = requestAnimationFrame(paintBar);
+  }
+
+  // Fim do vídeo: o vídeo some e a escrita LEGEND se desenha no centro.
+  function showWord() {
+    if (wordShown || !running) return;
+    wordShown = true;
+    intro.classList.add('word');
+    bar.style.transition = `transform ${WORD_MS}ms linear`;
+    bar.style.transform = 'scaleX(1)';
+    timers.push(setTimeout(finishIntro, WORD_MS));
+  }
 
   // Final da abertura: a escrita LEGEND encolhe e sobe até a logo do topo,
-  // enquanto o fundo escuro some e revela o cartão por baixo.
+  // enquanto o fundo branco some e revela o cartão por baixo.
   function finishIntro() {
     clearTimers();
     if (intro.hidden) return;
-    const word = intro.querySelector('.intro-word');
-    const wordImg = word.querySelector('img');
+    running = false;
     const target = document.getElementById('topbar-logo');
-    if (word.classList.contains('show') && target && !reducedMotion.matches) {
+    if (!wordShown) intro.classList.add('word');
+    if (target && !reducedMotion.matches) {
+      // Sem a escrita aberta (pulou cedo), ela aparece já inteira para subir.
+      if (!wordShown) wordImg.style.transition = 'none';
+      wordImg.style.clipPath = 'inset(0 0 0 0)';
       const from = wordImg.getBoundingClientRect();
       const to = target.getBoundingClientRect();
       const dx = (to.left + to.width / 2) - (from.left + from.width / 2);
       const dy = (to.top + to.height / 2) - (from.top + from.height / 2);
-      wordImg.style.transition = 'transform .95s cubic-bezier(.65,0,.25,1), filter .95s ease';
+      void wordImg.offsetWidth;
+      wordImg.style.transition = 'transform .95s cubic-bezier(.65,0,.25,1)';
       wordImg.style.transform = `translate(${dx}px, ${dy}px) scale(${to.width / from.width})`;
-      wordImg.style.filter = 'invert(1)';
     }
     intro.classList.add('exit');
+    video.pause();
     page.inert = false;
     document.body.style.overflow = '';
     timers.push(setTimeout(() => {
@@ -38,12 +69,12 @@
     }, 900));
     timers.push(setTimeout(() => {
       intro.hidden = true;
-      intro.classList.remove('exit');
+      intro.classList.remove('exit', 'word');
       wordImg.style.transition = 'none';
       wordImg.style.transform = '';
-      wordImg.style.filter = '';
-      intro.querySelectorAll('[data-step]').forEach(node => node.classList.remove('show', 'past'));
-      delete intro.dataset.step;
+      wordImg.style.clipPath = '';
+      void wordImg.offsetWidth;
+      wordImg.style.transition = '';
     }, 1000));
     if (previousFocus) previousFocus.focus({ preventScroll: true });
   }
@@ -52,35 +83,34 @@
     clearTimers();
     if (reducedMotion.matches) return;
     previousFocus = replay ? document.activeElement : null;
+    running = true;
+    wordShown = false;
     intro.hidden = false;
-    intro.classList.remove('exit');
+    intro.classList.remove('exit', 'word');
     document.documentElement.classList.add('intro-running');
     window.scrollTo({ top: 0 });
     page.inert = true;
     document.body.style.overflow = 'hidden';
     document.getElementById('skip-intro').focus({ preventScroll: true });
 
-    const steps = [...intro.querySelectorAll('[data-step]')];
-    steps.forEach(node => node.classList.remove('show', 'past'));
-    const total = steps.reduce((sum, node) => sum + STEP_MS[node.dataset.step], 0);
-
     bar.style.transition = 'none';
     bar.style.transform = 'scaleX(0)';
     void bar.offsetWidth;
-    bar.style.transition = `transform ${total}ms linear`;
-    bar.style.transform = 'scaleX(1)';
+    bar.style.transition = '';
 
-    let at = 0;
-    steps.forEach((node, i) => {
-      timers.push(setTimeout(() => {
-        if (i > 0) { steps[i - 1].classList.remove('show'); steps[i - 1].classList.add('past'); }
-        node.classList.add('show');
-        intro.dataset.step = node.dataset.step;
-      }, at));
-      at += STEP_MS[node.dataset.step];
-    });
-    timers.push(setTimeout(finishIntro, at));
+    try { video.currentTime = 0; } catch (e) { /* vídeo ainda carregando */ }
+    const playing = video.play();
+    if (playing && playing.catch) {
+      // Sem autoplay (modo economia do celular): vai direto para a logo.
+      playing.catch(() => { if (running) showWord(); });
+    }
+    // Rede lenta: se o vídeo não começar em 4 s, segue para a logo.
+    timers.push(setTimeout(() => { if (running && video.currentTime < 0.05) showWord(); }, 4000));
+    raf = requestAnimationFrame(paintBar);
   }
+
+  video.addEventListener('ended', showWord);
+  video.addEventListener('error', () => { if (running) showWord(); });
 
   startIntro();
   window.addEventListener('pageshow', event => { if (event.persisted) startIntro(); });
