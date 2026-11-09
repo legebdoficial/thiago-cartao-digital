@@ -7,7 +7,7 @@ Site estático em HTML, CSS e JavaScript, sem dependências de produção e sem 
 ## Experiência
 
 - Visual claro (papel creme, texto escuro, detalhes dourados), em estilo editorial: serifa fina com script.
-- Abertura de cerca de 12 segundos: vídeo em traço (`assets/abertura/abertura.mp4`, 720×1280, sem som, ~2 MB; traço em tinta sobre o papel creme do cartão, sem o chuvisco do couro e com a logo final em dourado) com o Thiago, a mochila e o close na logo bordada; no fim, a escrita LEGEND aparece no centro e sobe até a logo do topo. Botão "Pular" e "Rever abertura" no rodapé. Sem autoplay (modo economia) ou com rede lenta, a abertura vai direto para a logo.
+- Abertura de cerca de 12 segundos: o vídeo (Thiago com a mochila até o brilho da logo dourada) começa como desenho a traço sobre o papel creme e ganha cor de baixo para cima até virar o vídeo real. No fim, a escrita LEGEND aparece branca sobre o escuro e sobe até a logo do topo, ficando preta. Vídeo vertical no celular (`assets/abertura/abertura-v.mp4`, 720×1280) e horizontal em telas largas (`abertura-h.mp4`, 1280×720), sem som, 2–3 MB cada. Botão "Pular" e "Rever abertura" no rodapé. Sem autoplay (modo economia) ou com rede lenta, a abertura vai direto para a logo.
 - Capa com retrato, nome e botões já na primeira tela.
 - Quem é o Thiago, a trajetória (da ideia em 2022 às camisas de frase, as dificuldades, as primeiras bolsas bordadas, a fábrica própria, o Ronaldinho e os próximos voos), por que ter uma Legend, clubes clientes, links e fechamento.
 - Fotos em `assets/fotos`, peças em recorte em `assets/pecas`, escudos em `assets/clientes` e vídeos em `assets/ronaldinho`. Fontes hospedadas em `assets/fonts`.

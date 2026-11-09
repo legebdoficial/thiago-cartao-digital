@@ -10,7 +10,11 @@
   const word = document.getElementById('intro-word');
   const wordImg = word.querySelector('img');
   const WORD_MS = 1900;      // tempo da escrita LEGEND no centro antes de subir
-  const WORD_LEAD = 0.45;    // a escrita começa a entrar um pouco antes do vídeo acabar (s)
+  const WORD_LEAD = 0.25;    // a escrita começa a entrar um pouco antes do vídeo acabar (s)
+  // Vertical no celular, horizontal em telas largas.
+  const wide = window.matchMedia('(min-aspect-ratio: 1/1)').matches;
+  video.poster = video.dataset[wide ? 'posterH' : 'posterV'];
+  video.src = video.dataset[wide ? 'srcH' : 'srcV'];
   let timers = [];
   let previousFocus;
   let running = false;
@@ -57,8 +61,10 @@
       const dx = (to.left + to.width / 2) - (from.left + from.width / 2);
       const dy = (to.top + to.height / 2) - (from.top + from.height / 2);
       void wordImg.offsetWidth;
-      wordImg.style.transition = 'transform .95s cubic-bezier(.65,0,.25,1)';
+      // Sobe e passa de branca (sobre o escuro) para preta (sobre o cartão).
+      wordImg.style.transition = 'transform .95s cubic-bezier(.65,0,.25,1), filter .95s ease';
       wordImg.style.transform = `translate(${dx}px, ${dy}px) scale(${to.width / from.width})`;
+      wordImg.style.filter = 'invert(1)';
     }
     intro.classList.add('exit');
     video.pause();
@@ -73,6 +79,7 @@
       wordImg.style.transition = 'none';
       wordImg.style.transform = '';
       wordImg.style.clipPath = '';
+      wordImg.style.filter = '';
       void wordImg.offsetWidth;
       wordImg.style.transition = '';
     }, 1000));

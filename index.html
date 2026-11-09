@@ -20,7 +20,6 @@
   <link rel="icon" type="image/png" href="assets/symbol-legend-white.png">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/CormorantGaramond-300-latin.woff2" crossorigin>
   <link rel="preload" as="image" href="assets/fotos/thiago-estudio.webp">
-  <link rel="preload" as="image" href="assets/abertura/abertura-poster.jpg">
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
@@ -41,16 +40,19 @@
   </svg>
 
   <!--
-    Abertura (cerca de 11 s): vídeo em traço (Thiago com a mochila até o close na
-    logo bordada). No fim, a escrita LEGEND aparece no centro e sobe até a logo
-    do topo, enquanto o fundo branco some e revela o cartão.
+    Abertura (cerca de 12 s): o vídeo começa como um desenho a traço sobre o papel
+    creme e ganha cor de baixo para cima até virar o vídeo real (Thiago com a mochila
+    até o brilho da logo dourada). No fim, a escrita LEGEND aparece sobre o escuro e
+    sobe até a logo do topo, enquanto o fundo some e revela o cartão.
+    Celular: vídeo vertical; telas largas: vídeo horizontal (app.js escolhe).
   -->
   <div class="intro" id="intro" hidden aria-label="Abertura Legend">
-    <video class="intro-video" id="intro-video" muted playsinline preload="auto" poster="assets/abertura/abertura-poster.jpg" aria-hidden="true">
-      <source src="assets/abertura/abertura.mp4" type="video/mp4">
-    </video>
+    <video class="intro-video" id="intro-video" muted playsinline preload="auto" aria-hidden="true"
+      data-src-v="assets/abertura/abertura-v.mp4" data-poster-v="assets/abertura/poster-v.jpg"
+      data-src-h="assets/abertura/abertura-h.mp4" data-poster-h="assets/abertura/poster-h.jpg"></video>
+    <div class="intro-scrim" aria-hidden="true"></div>
     <div class="intro-word" id="intro-word">
-      <img src="assets/logo-legend-black.png" alt="Legend">
+      <img src="assets/logo-legend-white.png" alt="Legend">
       <span>FEITO PARA LENDAS</span>
     </div>
     <div class="intro-progress" aria-hidden="true"><i></i></div>
